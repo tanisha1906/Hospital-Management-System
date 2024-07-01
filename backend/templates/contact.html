@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+{% block title %} Contact Us {% endblock title %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="container mt-5" style="max-width: 700px;">
+    <h2 class="text-center text-info mb-4">Contact Us</h2>
+    {% include "message.html" %}
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card shadow-sm" style="border-radius: 10px; border: none;">
+                <div class="card-body" style="padding: 30px;">
+                    <form action="/contact" method="post">
+                        <div class="form-group">
+                            <label for="name" style="font-weight: bold;">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="font-weight: bold;">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" style="font-weight: bold;">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" style="font-weight: bold;">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-info btn-block text-white" style="background-color: #17a2b8; border-color: #17a2b8;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

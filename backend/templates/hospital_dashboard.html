@@ -1,0 +1,40 @@
+{% extends 'navbar.html' %}
+{% block title %} Hospital Dashboard {% endblock title %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container mt-5">
+    <h2 class="text-center" style="color:#17a2b8;">Patient Details for Hospital Code: {{ current_user.hcode }}</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>SRF ID</th>
+                        <th>Patient Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Bed Type</th>
+                        <th>Oxygen Level</th>
+                    </tr>
+                </thead>
+                <tbody class="table table-info table-striped">
+                    {% for patient in patients %}
+                    <tr>
+                        <td>{{ patient.srfid }}</td>
+                        <td>{{ patient.pname }}</td>
+                        <td>{{ patient.pphone }}</td>
+                        <td>{{ patient.paddress }}</td>
+                        <td>{{ patient.bedtype }}</td>
+                        <td>{{ patient.spo2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}
